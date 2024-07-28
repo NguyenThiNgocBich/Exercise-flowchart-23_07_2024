@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ngocb"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-07-26 04:12:40 PM"/>
+        <attribute name="created" value="bmdvY2I7REVTS1RPUC1DOE8xNVZMOzIwMjQtMDctMjY7MDE6MTc6MTggUE07Mjg1NQ=="/>
+        <attribute name="edited" value="bmdvY2I7REVTS1RPUC1DOE8xNVZMOzIwMjQtMDctMjY7MDQ6MTI6NDAgUE07MTsyOTU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i, temp, max, maxt, j" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <assign variable="temp" expression="0"/>
+            <assign variable="max" expression="0"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="a[i]" expression="random(10)"/>
+                <output expression="a[i]" newline="True"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="temp" expression="0"/>
+                <for variable="j" start="i+1" end="n-1" direction="inc" step="1">
+                    <if expression="a[i] = a[j]">
+                        <then>
+                            <assign variable="temp" expression="temp +1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="temp &gt;= max">
+                    <then>
+                        <assign variable="max" expression="temp"/>
+                        <assign variable="maxt" expression="a[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;ph&#7847;n t&#7917; l&#7863;p l&#7841;i nhi&#7873;u l&#7847;n nh&#7845;t trong m&#7843;ng:&quot;&amp;maxt" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
